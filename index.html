@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>local storage</title>
+    <script>
+        function guardarDatos(){
+        const infonombreTarea=document.getElementById("nomTarea").value;
+        const infofechaTarea=document.getElementById("fechaTarea").value;
+        const infohoraTarea=document.getElementById("horaTarea").value;
+        const infodescripcion=document.getElementById("descripcion").value;
+
+   
+     localStorage.setItem ( infonombreTarea , infonombreTarea);
+     localStorage.setItem ( "f" + infonombreTarea, infofechaTarea);
+     localStorage.setItem ( "h" + infonombreTarea, infohoraTarea);
+     localStorage.setItem ( "d" + infonombreTarea, infodescripcion);
+
+     
+
+        
+    }
+
+    </script>
+
+</head>
+
+<body>
+    <br> </br>
+    <h1>LISTA DE TAREAS</h1>
+    <br> </br>
+    <form onsubmit="guardarDatos();return false;"method= "post">
+
+     <label for="nomTarea">Nombre Tarea</label>
+     <input type="text" name="nomTarea" id="nomTarea"
+     placeholder="Ingresar Nombre Tarea" required>
+    
+     <br> </br>
+
+     <label for="fechaTarea">Fecha Tarea</label>
+     <input type="date" name="fechaTarea" id="fechaTarea">
+
+     <br> </br>
+     <label for="horaTarea">Hora Tarea</label>
+     <input type="time" name="horaTarea" id="horaTarea" >
+    
+
+     <br> </br>
+     <label for="descripcion">Descripcion</label>
+     <textarea name="descripción" id="descripcion" rows="3" cols="30"placeholder="Descripción de la tarea" required></textarea>
+     <br> </br>
+    
+     <input type="submit" value="Enviar">
+    </form>
+   
+
+
+<input type="button" onclick="consultarTarea()" value="Consultar">
+<input type="button" onclick="actualizarTarea()" value="Actualizar">
+<input type="button" onclick="eliminarTarea()" value="Eliminar">
+
+
+
+
+
+
+
+
+
+    </form>
+</body>
+</html>
