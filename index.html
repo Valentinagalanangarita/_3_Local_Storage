@@ -17,10 +17,18 @@
      localStorage.setItem ( "h" + infonombreTarea, infohoraTarea);
      localStorage.setItem ( "d" + infonombreTarea, infodescripcion);
 
-     
-
-        
     }
+     function consultarTarea(){
+
+        const infonombreTarea=document.getElementById("nomTarea").value;
+            const infofechaTarea= localStorage.getItem("f" + infonombreTarea);
+            const infohoraTarea= localStorage.getItem("h" + infonombreTarea);
+            const infodescripcion= localStorage.getItem("d" + infonombreTarea );
+            document.getElementById("fechaTarea").value=infofechaTarea;
+            document.getElementById("horaTarea").value=infohoraTarea;
+            document.getElementById("descripcion").value=infodescripcion;
+        }
+   
 
     </script>
 
@@ -31,6 +39,8 @@
     <h1>LISTA DE TAREAS</h1>
     <br> </br>
     <form onsubmit="guardarDatos();return false;"method= "post">
+        
+
 
      <label for="nomTarea">Nombre Tarea</label>
      <input type="text" name="nomTarea" id="nomTarea"
@@ -52,13 +62,18 @@
      <br> </br>
     
      <input type="submit" value="Enviar">
-    </form>
-   
-
 
 <input type="button" onclick="consultarTarea()" value="Consultar">
 <input type="button" onclick="actualizarTarea()" value="Actualizar">
 <input type="button" onclick="eliminarTarea()" value="Eliminar">
+
+
+
+ 
+    </form>
+   
+
+
 
 
 
