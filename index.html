@@ -39,10 +39,23 @@
      localStorage.setItem ( "f" + infonombreTarea, infofechaTarea);
      localStorage.setItem ( "h" + infonombreTarea, infohoraTarea);
      localStorage.setItem ( "d" + infonombreTarea, infodescripcion);
+    }
 
+    function eliminarTarea(){
 
-      }
+       const infonombreTarea=document.getElementById("nomTarea").value;
+       const infofechaTarea=document.getElementById ("fechaTarea").value;
+       const infohoraTarea=document.getElementById ("horaTarea").value;
+       const infodescripcion=document.getElementById ("descripcion").value;
 
+     localStorage.removeItem ( infonombreTarea , infonombreTarea);
+     localStorage.removeItem ( "f" + infonombreTarea, infofechaTarea);
+     localStorage.removeItem ( "h" + infonombreTarea, infohoraTarea);
+     localStorage.removeItem ( "d" + infonombreTarea, infodescripcion);
+
+    }
+
+    
     </script>
 
 </head>
@@ -96,6 +109,6 @@
 
 
 
-    </form>
+
 </body>
 </html>
