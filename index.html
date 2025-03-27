@@ -28,7 +28,20 @@
             document.getElementById("horaTarea").value=infohoraTarea;
             document.getElementById("descripcion").value=infodescripcion;
         }
-   
+      function actualizarTarea(){
+
+       const infonombreTarea=document.getElementById("nomTarea").value;
+       const infofechaTarea=document.getElementById ("fechaTarea").value;
+       const infohoraTarea=document.getElementById ("horaTarea").value;
+       const infodescripcion=document.getElementById ("descripción").value;
+
+     localStorage.setItem ( infonombreTarea , infonombreTarea);
+     localStorage.setItem ( "f" + infonombreTarea, infofechaTarea);
+     localStorage.setItem ( "h" + infonombreTarea, infohoraTarea);
+     localStorage.setItem ( "d" + infonombreTarea, infodescripcion);
+
+
+      }
 
     </script>
 
